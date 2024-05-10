@@ -7,7 +7,6 @@ The task is to create a wiki of Chess Grandmasters as defined by Chess.com. We a
 ### What we are looking for:
 - This exercise should be done in React with Typescript. 
 - We do not expect production-ready code. However, we do expect the candidate to point out sub-optimal compromises taken to complete the task
-- Written tests are not expected.
 
 📖 Documentation for chess.com's API can be found here: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-games-archive
 
