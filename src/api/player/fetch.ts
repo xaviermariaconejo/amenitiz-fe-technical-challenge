@@ -1,4 +1,4 @@
-import type { Player } from "../../types/Player";
+import { mapPlayer, type Player } from "../../types/Player";
 import { BASE_URL } from "../config";
 
 const URL = "pub/player";
@@ -14,5 +14,12 @@ export async function getPlayer(username: string): Promise<Player> {
   }
 
   const data: Player = await res.json();
-  return data;
+
+  if (!data) {
+    throw new Error(
+      `Error fetching player ${username} (${res.status}): ${res.statusText}`
+    );
+  }
+
+  return mapPlayer(data);
 }

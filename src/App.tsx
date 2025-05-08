@@ -6,14 +6,14 @@ import { useTitledPlayers } from "./api/playersByTitle/hook";
 
 export default function App() {
   const [selectedUser, setSelectedUser] = useState<string | null>(null);
-  const { data: players, isLoading, error } = useTitledPlayers("GM");
+  const { data: players, error } = useTitledPlayers("GM");
 
   return (
     <div className="h-screen flex flex-col bg-gray-100 overflow-hidden">
       <Header title="WikiChess" />
       <main
         className={`
-          flex-1 flex flex-col p-6 container grid gap-6 grid-rows-1 overflow-hidden
+          flex-1 flex flex-col p-6 container grid gap-6 grid-rows-1 overflow-hidden items-start
           ${selectedUser ? "grid-cols-5" : "grid-cols-1"}
         `}
       >
@@ -24,11 +24,9 @@ export default function App() {
         `}
         >
           <h2 className="text-xl font-semibold">Lista de Grandes Maestros</h2>
-          {isLoading && <p>Loading...</p>}
+          {!players && <p>Loading...</p>}
           {error && <p className="text-red-600">Error: {error}</p>}
-          {!isLoading && !error && (
-            <List items={players} onSelect={setSelectedUser} />
-          )}
+          {players && <List items={players} onSelect={setSelectedUser} />}
         </div>
 
         {selectedUser && (
