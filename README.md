@@ -27,10 +27,11 @@ API endpoint for player: [https://api.chess.com/pub/player/{username}](https://a
 On the profile page for a grandmaster that you created in step 2, add a clock that displays the amount of time since they were last online. The time since the user was active should be displayed as HH:MM:SS, and it should update every second.
 
 ---
+---
 
 # ✅ Solved
 
-Para ejecutar la solución:
+To see solution, execute:
 
 ```bash
 npm run dev
