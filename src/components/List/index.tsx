@@ -22,7 +22,7 @@ export const List: FC<ListProps> = ({ items, onSelect }) => {
     <div className="flex flex-col flex-1 overflow-hidden">
       <input
         type="text"
-        placeholder="Buscar usuario…"
+        placeholder="Search player..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="
@@ -46,7 +46,7 @@ export const List: FC<ListProps> = ({ items, onSelect }) => {
             </li>
           ))
         ) : (
-          <li className="p-4 text-gray-500">No se encontraron resultados.</li>
+          <li className="p-4 text-gray-500">No results</li>
         )}
       </ul>
     </div>

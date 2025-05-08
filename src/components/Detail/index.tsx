@@ -14,7 +14,7 @@ export const Detail: FC<DetailProps> = ({ username, onBack }) => {
     return (
       <div className="p-6">
         <p>
-          Cargando datos de <strong>{username}</strong>…
+          Loading data of: <strong>{username}</strong>…
         </p>
       </div>
     );
@@ -52,13 +52,13 @@ export const Detail: FC<DetailProps> = ({ username, onBack }) => {
     <div className="bg-white p-6 rounded shadow space-y-6">
       <div className="flex justify-between">
         <p className="text-gray-600 text-sm font-medium mb-4">
-          Última conexión hace: <Timer startAt={player.last_online} />
+          Last connection: <Timer startAt={player.last_online} />
         </p>
         <button
           onClick={onBack}
           className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
         >
-          ← Volver
+          ← Go Back
         </button>
       </div>
 
@@ -83,10 +83,10 @@ export const Detail: FC<DetailProps> = ({ username, onBack }) => {
 
       <ul className="grid grid-cols-2 gap-4 text-gray-700">
         <li>
-          <strong>Seguidores:</strong> {player.followers}
+          <strong>Followers:</strong> {player.followers}
         </li>
         <li>
-          <strong>País:</strong>{" "}
+          <strong>Country:</strong>{" "}
           <a
             href={player.country}
             target="_blank"
@@ -97,28 +97,28 @@ export const Detail: FC<DetailProps> = ({ username, onBack }) => {
           </a>
         </li>
         <li>
-          <strong>Ubicación:</strong> {player.location || "—"}
+          <strong>Location:</strong> {player.location || "—"}
         </li>
         <li>
-          <strong>Estado:</strong> {player.status}
+          <strong>Status:</strong> {player.status}
         </li>
         <li>
-          <strong>Unido:</strong> {joinedDate}
+          <strong>Joined:</strong> {joinedDate}
         </li>
         <li>
-          <strong>Última conexión:</strong> {lastOnline}
+          <strong>Last online:</strong> {lastOnline}
         </li>
         <li>
-          <strong>Verificado:</strong> {player.verified ? "Sí" : "No"}
+          <strong>Verified:</strong> {player.verified ? "Sí" : "No"}
         </li>
         <li>
           <strong>Streamer:</strong> {player.is_streamer ? "Sí" : "No"}
         </li>
         <li>
-          <strong>Liga:</strong> {player.league}
+          <strong>League:</strong> {player.league}
         </li>
         <li>
-          <strong>Plataformas:</strong> {streaming}
+          <strong>Platforms:</strong> {streaming}
         </li>
       </ul>
     </div>

@@ -26,7 +26,7 @@ export default function App() {
             ${selectedUser ? "md:col-span-2" : "md:col-span-1"}
         `}
         >
-          <h2 className="text-xl font-semibold">Lista de Grandes Maestros</h2>
+          <h2 className="text-xl font-semibold">List of Grandmasters</h2>
           {!players && <p>Loading...</p>}
           {error && <p className="text-red-600">Error: {error}</p>}
           {players && <List items={players} onSelect={setSelectedUser} />}
